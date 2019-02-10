@@ -16,6 +16,7 @@
 		A6D12AD5220F7FF600A457EE /* UITouch+Synthesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D12AD4220F7FF600A457EE /* UITouch+Synthesis.swift */; };
 		A6D12AD7220FA16900A457EE /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D12AD6220FA16900A457EE /* TargetView.swift */; };
 		A6D12AE2220FCE7B00A457EE /* UIEvent+Synthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D12AE1220FCE7B00A457EE /* UIEvent+Synthesis.m */; };
+		A6D12AE4220FE16A00A457EE /* GSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D12AE3220FE16A00A457EE /* GSEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A6D12AD6220FA16900A457EE /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 		A6D12AE0220FCE7B00A457EE /* UIEvent+Synthesis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIEvent+Synthesis.h"; sourceTree = "<group>"; };
 		A6D12AE1220FCE7B00A457EE /* UIEvent+Synthesis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIEvent+Synthesis.m"; sourceTree = "<group>"; };
+		A6D12AE3220FE16A00A457EE /* GSEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				A6D12AD4220F7FF600A457EE /* UITouch+Synthesis.swift */,
+				A6D12AE3220FE16A00A457EE /* GSEvent.swift */,
 				A6D12AE0220FCE7B00A457EE /* UIEvent+Synthesis.h */,
 				A6D12AE1220FCE7B00A457EE /* UIEvent+Synthesis.m */,
 				A6D12AD2220F7CE400A457EE /* NSObject+KVC.swift */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D12AE4220FE16A00A457EE /* GSEvent.swift in Sources */,
 				A6D12AE2220FCE7B00A457EE /* UIEvent+Synthesis.m in Sources */,
 				A6D12ABC220F78DB00A457EE /* ViewController.swift in Sources */,
 				A6D12ABA220F78DB00A457EE /* AppDelegate.swift in Sources */,
