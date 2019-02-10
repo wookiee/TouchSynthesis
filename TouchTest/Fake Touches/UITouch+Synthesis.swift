@@ -60,9 +60,11 @@ extension UITouch {
         self["view"] = target
         self["locationInWindow"] = windowCoord
         self["previousLocationInWindow"] = windowCoord
-        self["phase"] = UITouch.Phase.began
-        self["touchFlags.firstTouchForView"] = 1
-        self["touchFlags.isTap"] = 1
+        self["phase"] = UITouch.Phase.began.rawValue
+        self["type"] = UITouch.TouchType.direct.rawValue
+//        self["touchFlags._firstTouchForView"] = 1
+//        self["touchFlags._isTap"] = 1
+//        print(self["touchFlags"])
         self["timestamp"] = Date.timeIntervalSinceReferenceDate
     
     }
