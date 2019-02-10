@@ -64,21 +64,14 @@ extension UITouch {
         self["type"] = UITouch.TouchType.direct.rawValue
 //        self["touchFlags._firstTouchForView"] = 1
 //        self["touchFlags._isTap"] = 1
-//        print(self["touchFlags"])
         self["timestamp"] = Date.timeIntervalSinceReferenceDate
     
     }
     
     class func dispatch(to view: UIView, at location: Location = .center, bypassSubviews: Bool = false) throws {
-        // For Swift Version
         let touch = try UITouch(in: view, at: location, bypassSubviews: bypassSubviews)
         let event = UIEvent(touch: touch)
         view.window?.sendEvent(event)
-        
-        // For Obj-C Version
-//        let touch = try UITouch(in: view, at: location, bypassSubviews: bypassSubviews)
-//        let event = UIEvent(touch: touch)
-//        view.window?.sendEvent(event)
     }
     
     func setPhase(_ phase: UITouch.Phase) {

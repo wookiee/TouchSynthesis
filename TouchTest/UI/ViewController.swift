@@ -19,17 +19,11 @@ class ViewController: UIViewController {
         target = view as? TargetView
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { [unowned self] (timer) in
-            // For the Swift version
             do {
                 try UITouch.dispatch(to: self.view, at: .random, bypassSubviews: true)
             } catch {
                 fatalError("\(error)")
             }
-            
-            // For the Obj-C version
-//            let touch = UITouch(in: self.view)
-//            let event = UIEvent(touch: touch)
-//            self.view.window?.sendEvent(event!)
         })
     }
 }
