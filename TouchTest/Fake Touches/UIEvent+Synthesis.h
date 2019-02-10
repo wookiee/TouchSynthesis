@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GSEvent : NSObject
+@interface UIEvent (Synthesis)
+
+- (instancetype)initWithTouch:(UITouch *)touch;
 
 @end
 
