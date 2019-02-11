@@ -25,14 +25,10 @@ public extension UIEvent {
                                       touchFlags: flags,
                                       touchType: type)
         
-        let touchesEventClass: AnyClass = objc_getClass("UITouchesEvent") as! AnyClass
-        var instance = touchesEventClass.alloc()
-        instance = instance.perform(selector, with: eventProxy, with: touchSet) as AnyObject
-        
-        return instance as! UITouchesEvent
-        
-//        let eventInstance = unsafeBitCast(instance, to: UIEvent.self)
-//        return eventInstance
+        let eventClass: AnyClass = objc_getRequiredClass("UITouchesEvent")
+        var instance: AnyObject = eventClass.alloc()
+        instance = instance.perform(selector, with: eventProxy, with: touchSet)!.takeUnretainedValue()
+        return instance as! UIEvent
     }
     
 }
