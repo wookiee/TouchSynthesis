@@ -10,18 +10,11 @@ import UIKit
 
 public extension UITouch {
     
-    public enum Location {
-        case center         // of the target view
-        case origin         // top left corner of the target view
-        case point(CGPoint) // custom location relative to target view's origin
-        case random         // random location within the target view's bounds
-    }
+}
+
+extension UITouch {
     
-    public enum Error: Swift.Error {
-        case noWindow // the view has no window, and so can't receieve touches
-    }
-    
-    convenience init(in view: UIView, at location: Location = .center, bypassSubviews: Bool = false) throws {
+    convenience init(in view: UIView, at location: Location, bypassSubviews: Bool) throws {
         
         self.init()
         
@@ -37,9 +30,7 @@ public extension UITouch {
         case .point(let pt):
             coord = pt
         case .random:
-            let rndX = CGFloat.random(in: 0...view.bounds.maxX)
-            let rndY = CGFloat.random(in: 0...view.bounds.maxY)
-            let rndPt = CGPoint(x: rndX, y: rndY)
+            let rndPt = view.bounds.randomPoint()
             coord = rndPt
         }
         
@@ -67,7 +58,7 @@ public extension UITouch {
     
     }
     
-    public class func dispatch(to view: UIView, at location: Location = .center, bypassSubviews: Bool = false) throws {
+    class func dispatch(to view: UIView, at location: Location, bypassSubviews: Bool) throws {
         let touch = try UITouch(in: view, at: location, bypassSubviews: bypassSubviews)
         let event = UIEvent.make(with: touch)
         view.window?.sendEvent(event)

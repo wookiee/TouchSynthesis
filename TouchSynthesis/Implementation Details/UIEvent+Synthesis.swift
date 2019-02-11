@@ -9,7 +9,7 @@
 import UIKit
 import ObjectiveC
 
-public extension UIEvent {
+extension UIEvent {
     
     @objc class func make(with touch: UITouch) -> UIEvent {
         
@@ -25,7 +25,6 @@ public extension UIEvent {
                                       touchFlags: flags,
                                       touchType: type)
         
-        // <objc/funtime.h> muahahaha
         let eventClass: AnyClass = objc_getRequiredClass("UITouchesEvent")
         var instance: AnyObject = eventClass.alloc()
         instance = instance.perform(selector, with: eventProxy, with: touchSet)!.takeUnretainedValue()

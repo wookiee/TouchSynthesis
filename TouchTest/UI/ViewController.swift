@@ -19,9 +19,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         target = view as? TargetView
         
-        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { [unowned self] (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: {[unowned self] (timer) in
             do {
-                try UITouch.dispatch(to: self.view, at: .random, bypassSubviews: true)
+                try self.target.tap(atLocation: .random(insetBy: 20), bypassSubviews: true)
             } catch {
                 fatalError("\(error)")
             }
