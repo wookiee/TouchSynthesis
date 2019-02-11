@@ -70,7 +70,7 @@ extension UITouch {
     
     class func dispatch(to view: UIView, at location: Location = .center, bypassSubviews: Bool = false) throws {
         let touch = try UITouch(in: view, at: location, bypassSubviews: bypassSubviews)
-        let event = UIEvent(touch: touch)
+        let event = UIEvent.make(with: touch)
         view.window?.sendEvent(event)
     }
     
