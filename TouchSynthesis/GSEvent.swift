@@ -11,7 +11,7 @@ import UIKit
 // GSEvent is an undeclared object. We don't need to use it ourselves but some
 // Apple APIs (UIScrollView in particular) require the x and y fields to be present.
 
-public class GSEventProxy: NSObject {
+class GSEventProxy: NSObject {
     @objc var flags: CUnsignedInt = 0
     @objc var type: CUnsignedInt = 0
     @objc var ignored1: CUnsignedInt = 0

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TouchSynthesis
 
 class ViewController: UIViewController {
 
