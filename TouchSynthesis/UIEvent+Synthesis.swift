@@ -15,8 +15,8 @@ public extension UIEvent {
         
         let location = touch.location(in: touch.window)
         let size = CGSize(width: 1.0, height: 1.0)
-        let flags = CUnsignedInt(touch.phase == .ended ? 0x1010180 : 0x3010180)
-        let type = CUnsignedInt(3001)
+        let flags = UInt(touch.phase == .ended ? 0x1010180 : 0x3010180)
+        let type = UInt(3001)
         
         let selector = Selector(("_initWithEvent:touches:"))
         let touchSet = NSSet(array: [touch])
