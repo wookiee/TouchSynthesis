@@ -10,18 +10,12 @@ import UIKit
 
 public extension UITouch {
     
-    public enum Location {
-        case center         // of the target view
-        case origin         // top left corner of the target view
-        case point(CGPoint) // custom location relative to target view's origin
-        case random         // random location within the target view's bounds
-    }
+}
+
+extension UITouch {
     
-    public enum Error: Swift.Error {
-        case noWindow // the view has no window, and so can't receieve touches
-    }
-    
-    convenience init(in view: UIView, at location: Location = .center, bypassSubviews: Bool = false) throws {
+    /// Instantiate a new UITouch.
+    convenience init(in view: UIView, at location: Location, bypassSubviews: Bool) throws {
         
         self.init()
         
@@ -37,9 +31,7 @@ public extension UITouch {
         case .point(let pt):
             coord = pt
         case .random:
-            let rndX = CGFloat.random(in: 0...view.bounds.maxX)
-            let rndY = CGFloat.random(in: 0...view.bounds.maxY)
-            let rndPt = CGPoint(x: rndX, y: rndY)
+            let rndPt = view.bounds.randomPoint()
             coord = rndPt
         }
         
@@ -53,7 +45,7 @@ public extension UITouch {
             target = bypassSubviews ? view : window.hitTest(coord, with: nil)
         }
         
-        // Finally configure the touch
+        // Finally configure the touch, using KVC to set hidden values (reverse-engineered by Matt Gallagher)
         self["tapCount"] = 1
         self["window"] = window
         self["view"] = target
@@ -67,17 +59,20 @@ public extension UITouch {
     
     }
     
-    public class func dispatch(to view: UIView, at location: Location = .center, bypassSubviews: Bool = false) throws {
+    /// Minor wrapper methtod to create and dispatch a UITouch.
+    class func dispatch(to view: UIView, at location: Location, bypassSubviews: Bool) throws {
         let touch = try UITouch(in: view, at: location, bypassSubviews: bypassSubviews)
         let event = UIEvent.make(with: touch)
         view.window?.sendEvent(event)
     }
     
+    /// Set a `UITouch`'s `phase` and update its `timestamp` accordingly.
     func setPhase(_ phase: UITouch.Phase) {
         self["phase"] = phase
         self["timestamp"] = Date.timeIntervalSinceReferenceDate
     }
     
+    /// Set a `UITouch`'s location, and update its previous location and `timestamp` accordingly.
     func setLocationInWindow(_ location: CGPoint) {
         self["previousLocationInWindow"] = self["locationInWindow"]
         self["locationInWindow"] = location

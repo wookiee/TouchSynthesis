@@ -21,6 +21,9 @@
 		A6D12AFE2211F58800A457EE /* UITouch+Synthesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D12AD4220F7FF600A457EE /* UITouch+Synthesis.swift */; };
 		A6D12AFF2211F58800A457EE /* UIEvent+Synthesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D12AE7220FE55500A457EE /* UIEvent+Synthesis.swift */; };
 		A6D12B002211F58800A457EE /* GSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D12AE3220FE16A00A457EE /* GSEvent.swift */; };
+		A6D12B042212107C00A457EE /* UIView+FakeTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D12B032212107C00A457EE /* UIView+FakeTap.swift */; };
+		A6D12B062212114A00A457EE /* CGRect+RandomPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D12B052212114A00A457EE /* CGRect+RandomPoint.swift */; };
+		A6D12B0A22121B2000A457EE /* UITouch+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D12B0922121B2000A457EE /* UITouch+Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		A6D12AEF2211F57900A457EE /* TouchSynthesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TouchSynthesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D12AF12211F57900A457EE /* TouchSynthesis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchSynthesis.h; sourceTree = "<group>"; };
 		A6D12AF22211F57900A457EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6D12B032212107C00A457EE /* UIView+FakeTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FakeTap.swift"; sourceTree = "<group>"; };
+		A6D12B052212114A00A457EE /* CGRect+RandomPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+RandomPoint.swift"; sourceTree = "<group>"; };
+		A6D12B0922121B2000A457EE /* UITouch+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITouch+Location.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,15 +134,34 @@
 		A6D12AF02211F57900A457EE /* TouchSynthesis */ = {
 			isa = PBXGroup;
 			children = (
+				A6D12B072212134D00A457EE /* Public API */,
+				A6D12B082212136300A457EE /* Implementation Details */,
+				A6D12AF22211F57900A457EE /* Info.plist */,
+			);
+			path = TouchSynthesis;
+			sourceTree = "<group>";
+		};
+		A6D12B072212134D00A457EE /* Public API */ = {
+			isa = PBXGroup;
+			children = (
 				A6D12AF12211F57900A457EE /* TouchSynthesis.h */,
+				A6D12B032212107C00A457EE /* UIView+FakeTap.swift */,
+				A6D12B052212114A00A457EE /* CGRect+RandomPoint.swift */,
+				A6D12B0922121B2000A457EE /* UITouch+Location.swift */,
+			);
+			path = "Public API";
+			sourceTree = "<group>";
+		};
+		A6D12B082212136300A457EE /* Implementation Details */ = {
+			isa = PBXGroup;
+			children = (
 				A6D12AD4220F7FF600A457EE /* UITouch+Synthesis.swift */,
 				A6D12AE7220FE55500A457EE /* UIEvent+Synthesis.swift */,
 				A6D12AE3220FE16A00A457EE /* GSEvent.swift */,
 				A6D12AE5220FE47F00A457EE /* PublicEvent.swift */,
 				A6D12AD2220F7CE400A457EE /* NSObject+KVC.swift */,
-				A6D12AF22211F57900A457EE /* Info.plist */,
 			);
-			path = TouchSynthesis;
+			path = "Implementation Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +289,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6D12B002211F58800A457EE /* GSEvent.swift in Sources */,
+				A6D12B062212114A00A457EE /* CGRect+RandomPoint.swift in Sources */,
+				A6D12B042212107C00A457EE /* UIView+FakeTap.swift in Sources */,
 				A6D12AFD2211F58800A457EE /* NSObject+KVC.swift in Sources */,
 				A6D12AFE2211F58800A457EE /* UITouch+Synthesis.swift in Sources */,
 				A6D12AFC2211F58800A457EE /* PublicEvent.swift in Sources */,
+				A6D12B0A22121B2000A457EE /* UITouch+Location.swift in Sources */,
 				A6D12AFF2211F58800A457EE /* UIEvent+Synthesis.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

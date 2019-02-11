@@ -9,7 +9,15 @@
 import UIKit
 import ObjectiveC
 
-public extension UIEvent {
+extension UIEvent {
+    
+    /// Creates a new `UIEvent` wrapping a `UITouch` instance.
+    ///
+    /// - Parameter touch: The `UITouch` to sit at the heart of the new `UIEvent`.
+    ///
+    /// - Returns: The newly-instantiated `UIEvent`.
+    ///
+    /// - Note: Uses lots of magic numbers, runtime hackery, and undocumented API. Do not use in production.
     
     @objc class func make(with touch: UITouch) -> UIEvent {
         
@@ -25,7 +33,6 @@ public extension UIEvent {
                                       touchFlags: flags,
                                       touchType: type)
         
-        // <objc/funtime.h> muahahaha
         let eventClass: AnyClass = objc_getRequiredClass("UITouchesEvent")
         var instance: AnyObject = eventClass.alloc()
         instance = instance.perform(selector, with: eventProxy, with: touchSet)!.takeUnretainedValue()
