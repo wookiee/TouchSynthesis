@@ -2,9 +2,9 @@
 
 # TouchSynthesis
 
-This project is a translation and re-implementation of the touch synthesis code in Matt Gallagher's project from his blog post, ["Synthesizing a touch event on the iPhone"](https://www.cocoawithlove.com/2008/10/synthesizing-touch-event-on-iphone.html)
+This project is a translation and re-implementation of the touch synthesis code in Matt Gallagher's project from his blog post, ["Synthesizing a touch event on the iPhone"](https://www.cocoawithlove.com/2008/10/synthesizing-touch-event-on-iphone.html).
 
-Matt is a brilliant developer and the reverse-engineering of `UITouch`, `UIEvent`, and `GSEvent` are his work, not mine. I have merely translated his work to Swift and wrapped it into a small and hopefully convenient framework.
+Matt is a brilliant developer and the reverse-engineering of `UITouch`, `UIEvent`, etc. are his work, not mine. I have merely translated his work to Swift and wrapped it into a small and hopefully convenient framework.
 
 # Usage
 
