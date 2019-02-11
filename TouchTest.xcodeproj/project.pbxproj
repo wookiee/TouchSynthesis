@@ -28,7 +28,6 @@
 		A6D12AC0220F78DD00A457EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6D12AC3220F78DD00A457EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6D12AC5220F78DD00A457EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6D12ACB220F7A7F00A457EE /* TouchTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6D12AD2220F7CE400A457EE /* NSObject+KVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+KVC.swift"; sourceTree = "<group>"; };
 		A6D12AD4220F7FF600A457EE /* UITouch+Synthesis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITouch+Synthesis.swift"; sourceTree = "<group>"; };
 		A6D12AD6220FA16900A457EE /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
@@ -73,7 +72,6 @@
 				A6D12AC0220F78DD00A457EE /* Assets.xcassets */,
 				A6D12AC2220F78DD00A457EE /* LaunchScreen.storyboard */,
 				A6D12AC5220F78DD00A457EE /* Info.plist */,
-				A6D12ACB220F7A7F00A457EE /* TouchTest-Bridging-Header.h */,
 			);
 			path = TouchTest;
 			sourceTree = "<group>";
@@ -335,7 +333,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.TouchTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TouchTest/TouchTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -356,7 +353,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.TouchTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TouchTest/TouchTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
