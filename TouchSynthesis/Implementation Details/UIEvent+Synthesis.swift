@@ -11,6 +11,14 @@ import ObjectiveC
 
 extension UIEvent {
     
+    /// Creates a new `UIEvent` wrapping a `UITouch` instance.
+    ///
+    /// - Parameter touch: The `UITouch` to sit at the heart of the new `UIEvent`.
+    ///
+    /// - Returns: The newly-instantiated `UIEvent`.
+    ///
+    /// - Note: Uses lots of magic numbers, runtime hackery, and undocumented API. Do not use in production.
+    
     @objc class func make(with touch: UITouch) -> UIEvent {
         
         let location = touch.location(in: touch.window)

@@ -14,9 +14,11 @@ public extension CGRect {
     ///
     /// - Parameter insetBy: a margin applied to the random numbers
     ///
+    /// - Precondition: The inset must be less than half the width of the rectangle.
+    ///
     /// - Returns: A new CGPoint.
     
-    func randomPoint(insetBy inset: CGFloat = 0) -> CGPoint {
+    public func randomPoint(insetBy inset: CGFloat = 0) -> CGPoint {
         
         precondition(inset < width/2.0 && inset < height/2.0, "Inset of \(inset) is out of bounds for rect \(self)")
         

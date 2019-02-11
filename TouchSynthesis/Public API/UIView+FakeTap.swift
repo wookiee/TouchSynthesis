@@ -16,17 +16,16 @@ public extension UIView {
     
     /// Synthesizes a single `UITouch` at the specified location relative to the view's bounds, akin to a one-finger single-tap.
     ///
-    /// - Parameters:
-    ///     - atLocation: A `Location` relative to the view's bounds.
-    ///     - bypassSubviews: The *y* component of the vector.
-    ///
-    /// - Throws: `UITouch.Error.noWindow`
-    /// if the view has no window.
-    ///
-    /// - Note: `UIWindow` is responsible for dispatching touches to views in its hierarchy,
+    /// `UIWindow` is responsible for dispatching touches to views in its hierarchy,
     /// and so if a view is not attached to a window's view hierarchy, touches cannot be dispatched to the view.
+    ///
+    /// - Parameters:
+    ///   - location: A `Location` relative to the view's bounds.
+    ///   - bypassSubviews: If `true`, subviews overlapping the view will not be allowed to intercept the touch. The default value is `false`.
+    ///
+    /// - Throws: `UITouch.Error.noWindow` if the view has no window.
     
-    public func tap(atLocation location: UITouch.Location, bypassSubviews: Bool = false) throws {
+    public func tap(at location: UITouch.Location, bypassSubviews: Bool = false) throws {
         try UITouch.dispatch(to: self, at: location, bypassSubviews: bypassSubviews)
     }
     

@@ -10,6 +10,20 @@ import UIKit
 
 class TargetView: UIView {
     
+    /// Add a small, round, red dot as a subview at the given coordinates.
+    func addDot(at pt: CGPoint) {
+        let edgeLength: CGFloat = 5
+        let dot = UIView(frame: CGRect(x: pt.x - edgeLength/2.0,
+                                       y: pt.y - edgeLength/2.0,
+                                       width: edgeLength,
+                                       height: edgeLength))
+        dot.backgroundColor = .red
+        dot.layer.cornerRadius = edgeLength/2.0
+        addSubview(dot)
+    }
+    
+    // MARK: - UIResponder overrides
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             addDot(at: touch.location(in: self))
@@ -21,15 +35,5 @@ class TargetView: UIView {
             addDot(at: touch.location(in: self))
         }
     }
-    
-    func addDot(at pt: CGPoint) {
-        let edgeLength: CGFloat = 5
-        let dot = UIView(frame: CGRect(x: pt.x - edgeLength/2.0,
-                                       y: pt.y - edgeLength/2.0,
-                                       width: edgeLength,
-                                       height: edgeLength))
-        dot.backgroundColor = .red
-        dot.layer.cornerRadius = edgeLength/2.0
-        addSubview(dot)
-    }
+
 }

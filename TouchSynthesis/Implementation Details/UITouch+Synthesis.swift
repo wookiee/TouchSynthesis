@@ -14,6 +14,7 @@ public extension UITouch {
 
 extension UITouch {
     
+    /// Instantiate a new UITouch.
     convenience init(in view: UIView, at location: Location, bypassSubviews: Bool) throws {
         
         self.init()
@@ -44,7 +45,7 @@ extension UITouch {
             target = bypassSubviews ? view : window.hitTest(coord, with: nil)
         }
         
-        // Finally configure the touch
+        // Finally configure the touch, using KVC to set hidden values (reverse-engineered by Matt Gallagher)
         self["tapCount"] = 1
         self["window"] = window
         self["view"] = target
@@ -58,17 +59,20 @@ extension UITouch {
     
     }
     
+    /// Minor wrapper methtod to create and dispatch a UITouch.
     class func dispatch(to view: UIView, at location: Location, bypassSubviews: Bool) throws {
         let touch = try UITouch(in: view, at: location, bypassSubviews: bypassSubviews)
         let event = UIEvent.make(with: touch)
         view.window?.sendEvent(event)
     }
     
+    /// Set a `UITouch`'s `phase` and update its `timestamp` accordingly.
     func setPhase(_ phase: UITouch.Phase) {
         self["phase"] = phase
         self["timestamp"] = Date.timeIntervalSinceReferenceDate
     }
     
+    /// Set a `UITouch`'s location, and update its previous location and `timestamp` accordingly.
     func setLocationInWindow(_ location: CGPoint) {
         self["previousLocationInWindow"] = self["locationInWindow"]
         self["locationInWindow"] = location
