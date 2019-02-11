@@ -6,7 +6,7 @@
 //  Copyright © 2019 Mikey Ward. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // GSEvent is an undeclared object. We don't need to use it ourselves but some
 // Apple APIs (UIScrollView in particular) require the x and y fields to be present.
