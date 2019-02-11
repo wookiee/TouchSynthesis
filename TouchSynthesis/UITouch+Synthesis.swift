@@ -8,17 +8,16 @@
 
 import UIKit
 
-extension UITouch {
+public extension UITouch {
     
-    // Locations are in a target view's coordinate system
-    enum Location {
-        case center
-        case origin
-        case point(CGPoint)
-        case random
+    public enum Location {
+        case center         // of the target view
+        case origin         // top left corner of the target view
+        case point(CGPoint) // custom location relative to target view's origin
+        case random         // random location within the target view's bounds
     }
     
-    enum Error: Swift.Error {
+    public enum Error: Swift.Error {
         case noWindow // the view has no window, and so can't receieve touches
     }
     
@@ -68,7 +67,7 @@ extension UITouch {
     
     }
     
-    class func dispatch(to view: UIView, at location: Location = .center, bypassSubviews: Bool = false) throws {
+    public class func dispatch(to view: UIView, at location: Location = .center, bypassSubviews: Bool = false) throws {
         let touch = try UITouch(in: view, at: location, bypassSubviews: bypassSubviews)
         let event = UIEvent.make(with: touch)
         view.window?.sendEvent(event)

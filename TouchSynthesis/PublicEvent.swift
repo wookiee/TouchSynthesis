@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PublicEvent: NSObject {
+class PublicEvent: NSObject {
     @objc var _event: GSEventProxy? = nil
     @objc var _timestamp: TimeInterval = 0
     @objc var _touches: NSMutableSet? = nil
