@@ -6,6 +6,8 @@ This project is a translation and re-implementation of the touch synthesis code 
 
 Matt is a brilliant developer and the reverse-engineering of `UITouch`, `UIEvent`, etc. are his work, not mine. I have merely translated his work to Swift and wrapped it into a small and hopefully convenient framework.
 
+_This framework makes heavy use of private/undocumented API and as such, should only be used for debugging and testing._
+
 # Usage
 
 After importing the `TouchSynthesis` framework (say, with [Carthage](https://github.com/Carthage/Carthage)),
