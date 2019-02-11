@@ -108,19 +108,11 @@
 			children = (
 				A6D12AB9220F78DB00A457EE /* AppDelegate.swift */,
 				A6D12AD9220FA31E00A457EE /* UI */,
-				A6D12AD8220FA30200A457EE /* Fake Touches */,
 				A6D12AC0220F78DD00A457EE /* Assets.xcassets */,
 				A6D12AC2220F78DD00A457EE /* LaunchScreen.storyboard */,
 				A6D12AC5220F78DD00A457EE /* Info.plist */,
 			);
 			path = TouchTest;
-			sourceTree = "<group>";
-		};
-		A6D12AD8220FA30200A457EE /* Fake Touches */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Fake Touches";
 			sourceTree = "<group>";
 		};
 		A6D12AD9220FA31E00A457EE /* UI */ = {
