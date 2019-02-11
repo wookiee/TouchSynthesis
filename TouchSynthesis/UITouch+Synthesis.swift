@@ -10,12 +10,11 @@ import UIKit
 
 public extension UITouch {
     
-    // Locations are in a target view's coordinate system
     public enum Location {
-        case center
-        case origin
-        case point(CGPoint)
-        case random
+        case center         // of the target view
+        case origin         // top left corner of the target view
+        case point(CGPoint) // custom location relative to target view's origin
+        case random         // random location within the target view's bounds
     }
     
     public enum Error: Swift.Error {
